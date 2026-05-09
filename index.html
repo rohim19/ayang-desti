@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #fffafb; }
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+    </style>
+</head>
+<body class="pb-10">
+
+    <!-- Header / Hero Mobile -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-pink-50">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-pink-50/80 z-10"></div>
+        <!-- Ganti URL gambar dengan foto kalian berdua -->
+        <img src="https://images.unsplash.com/photo-1518199266791-739d6ffc8ec5?q=80&w=1000" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="relative z-20 text-center px-4">
+            <h1 class="text-5xl font-romantic text-white drop-shadow-lg">Rohim & [Nama Dia]</h1>
+            <p class="text-white mt-2 font-light tracking-widest text-sm uppercase">Since 2024</p>
+        </div>
+    </section>
+
+    <!-- Anniversary Counter Card -->
+    <section class="px-6 -mt-16 relative z-30">
+        <div class="bg-white rounded-3xl shadow-xl p-8 text-center border border-pink-100">
+            <h2 class="text-gray-400 text-sm font-semibold uppercase tracking-wide mb-4">Sudah Berjalan Selama</h2>
+            <div class="flex justify-around items-center">
+                <div>
+                    <span id="days" class="text-3xl font-bold text-pink-500 block">0</span>
+                    <span class="text-xs text-gray-500">Hari</span>
+                </div>
+                <div class="text-pink-200 text-2xl">❤</div>
+                <div>
+                    <span id="hours" class="text-3xl font-bold text-pink-500 block">0</span>
+                    <span class="text-xs text-gray-500">Jam</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moments Gallery (Vertical Scroll) -->
+    <section class="mt-12 px-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+            <span class="mr-2">📸</span> Galeri Kenangan
+        </h3>
+        <div class="space-y-6">
+            <!-- Card 1 -->
+            <div class="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100">
+                <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400 italic text-sm">Taruh foto momen 1 di sini</div>
+                <div class="p-4">
+                    <p class="font-semibold text-gray-700">Waktu pertama kali jalan</p>
+                    <p class="text-xs text-gray-400 mt-1">12 Januari 2024</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100">
+                <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400 italic text-sm">Taruh foto momen 2 di sini</div>
+                <div class="p-4">
+                    <p class="font-semibold text-gray-700">Makan malem bareng</p>
+                    <p class="text-xs text-gray-400 mt-1">14 Februari 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Quote -->
+    <section class="mt-12 px-8 text-center italic text-gray-500 font-light">
+        "Kamu adalah hal favoritku setiap hari."
+    </section>
+
+    <script>
+        // Script untuk menghitung hari jadian
+        // Ganti tanggal di bawah dengan tanggal jadian kalian
+        const startDate = new Date("2024-01-01T00:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+        }, 1000);
+    </script>
+</body>
+</html>
